@@ -15,10 +15,22 @@
 
         #map {
             position: absolute;
-            top: 0;
-            bottom: 0;
+            top: 10%;
+            bottom: 10%;
             width: 100%;
         }
+        
+        #text {
+            position: absolute;
+            top: 90%;
+            width: 80%;
+            margin-left: 2%;
+        }
+        h1 {
+            margin-left: 2%;
+        }
+
+
     </style>
 </head>
 
@@ -33,8 +45,9 @@
             container: 'map',
             // Replace YOUR_STYLE_URL with your style URL.
             style: 'mapbox://styles/annamei1913/cl46t9w3m000015podlktojbs',
-            center: [-87.661557, 41.893748],
-            zoom: 10.7
+            //center: [-87.661557, 41.893748],
+            center: [13.2504,52.4728],
+            zoom: 11
         });
 
         /* Add an event listener that runs when a user clicks on the map element. */
@@ -42,7 +55,7 @@
         map.on('click', (event) => {
             // If the user clicked on one of your markers, get its information.
             const features = map.queryRenderedFeatures(event.point, {
-                layers: ['chicago-parks'] // replace with your layer name
+                layers: ['map-workshop-test'] // replace with your layer name
             });
             if (!features.length) {
                 return;
@@ -55,7 +68,7 @@
                 .setLngLat(feature.geometry.coordinates)
                 .setHTML(
                     `<h3>${feature.properties.title}</h3>
-                    <p>${feature.properties.description}</p>`
+                    <p>${feature.properties.Sensoren}</p>`
                 )
                 .addTo(map);
 
@@ -64,6 +77,9 @@
 
 
     </script>
+
+    <p id="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, placeat.</p>
+
 </body>
 
 </html>
