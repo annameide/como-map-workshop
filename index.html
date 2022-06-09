@@ -51,11 +51,10 @@
         });
 
         /* Add an event listener that runs when a user clicks on the map element. */
-
         map.on('click', (event) => {
             // If the user clicked on one of your markers, get its information.
             const features = map.queryRenderedFeatures(event.point, {
-                layers: ['map-workshop-test'] // replace with your layer name
+                layers: ['map-workshop-test2'] // replace with your layer name
             });
             if (!features.length) {
                 return;
@@ -67,11 +66,10 @@
             const popup = new mapboxgl.Popup({ offset: [0, -15] })
                 .setLngLat(feature.geometry.coordinates)
                 .setHTML(
-                    `<h3>${feature.properties.title}</h3>
-                    <p>${feature.properties.Sensoren}</p>`
+                    `<h3>${feature.properties.teilnehmer}</h3>
+                    <p>${feature.properties.Sensoranzahl}</p>`
                 )
-                .addTo(map);
-
+                .addTo(map);    
         });
 
 
