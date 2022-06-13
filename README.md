@@ -1,3 +1,9 @@
+# Map box experiment
+
+A trial implementation published with guthub pages
+https://annameide.github.io/como-map-workshop/
+
+
 # Map Templates
 
 ## How To
